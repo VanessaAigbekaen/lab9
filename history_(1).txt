@@ -1,0 +1,78 @@
+    
+  500  gh auth status
+  501  gh auth login
+  502  gh auth status
+  503  gh repo create lab9 --public --clone
+  504  cd lab9
+  505  gh label create EPIC
+  506  gh issue create --title "do lab9" --label EPIC --assignee @me --body "Lab 9 epic"
+  507  gh issue create --title "create validate-data script" --label enhancement --assignee @me --body "bash script: PASS if name <=15 chars and mobile <=10 chars"
+  508  import sys
+  509  MAX_NAME = 15
+  510* 
+  511  if len(sys.argv) != 3:
+  512  name, mobile = sys.argv[1], sys.argv[2]
+  513  if len(name) <= MAX_NAME and len(mobile) <= MAX_MOBILE:
+  514* 
+  515  cat validate-data.py
+  516  ls
+  517  nano validate-data.py
+  518  cat validate-data.py
+  519  nano validate-data.py
+  520  cat validate-data.py
+  521  nano validate-data.py
+  522  cat validate-data.py
+  523  chmod +x validate-data.py
+  524  python3 validate-data.py "pearse mccarthy" "0831122334"
+  525  python3 validate-data.py "pearse mccarthy" "08311223344"
+  526  python3 validate-data.py "pearseT mccarthy" "0831122334"
+  527  git add validate-data.py
+  528  git commit -m "Add validate-data python script"
+  529  gh issue create --title "create yaml test script" --label enhancement --assignee @me
+  530  gh issue list
+  531  gh issue create --title "create yaml test script" --label enhancement --assignee @me --body "Create basictests.yml github action"
+  532  mkdir .github
+  533  cd .github
+  534  mkdir workflows && cd workflows
+  535  touch basictests.yml
+  536  nano basictests.yml
+  537  cat basictests.yml
+  538  cd ..
+  539  git add .github/workflows/basictests.yml
+  540  git commit -m "Add basictests workflow"
+  541  git push origin main
+  542  git branch -m master main
+  543  git push -u origin main
+  544  gh run list
+  545  gh run view --log --oneline
+  546  nano .github/workflows/basictests.yml
+  547  cat .github/workflows/basictests.yml
+  548  git add .github/workflows/basictests.yml
+  549  git commit -m "Fixed workflow erros"
+  550  git push -u origin main
+  551  git status
+  552  cat .github/workflows/basictests.yml
+  553  pwd
+  554  git branch --show-current
+  555  git status
+  556  git log -1 --oneline
+  557  git remote -v
+  558  ls -la .github/workflows/
+  559  git ls-files
+  560  gh issue close 2
+  561  gh issue close 3
+  562  gh issue create --title "create lab9 project view" --label enhancement --assignee @me --body "table view: label, title, assignee"
+  563  gh auth refresh -s project
+  564  gh project create --owner @me --title lab9
+  565  gh issue create --title "create test branch" --label enhancement --assignee @me --body "branch test, name max 20"
+  566  git switch -c test
+  567  sed -i 's/-le 15/-le 20/' validate-data.sh      
+  568  sed -i 's/-le 15/-le 20/' validate-data.py
+  569  git add validate-data.py
+  570  aigbekaenvanessa54@cloudshell:~/lab9$ git add validate-data.py
+  571  aigbekaenvanessa54@cloudshell:~/lab9$ 
+  572  git add validate-data.py
+  573  git commit -m "name max 20"
+  574  git push -u origin test
+  575  nano .github/workflows/basictests.yml
+  576  history > history.txt
